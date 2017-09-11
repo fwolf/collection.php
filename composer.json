@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Fwolf\\Collection\\": "src/Collection/"
+            "Fwolf\\Common\\Collection\\": "src/Collection/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FwolfTest\\Collection\\": "tests/Collection/"
+            "FwolfTest\\Common\\Collection\\": "tests/Collection/"
         }
     }
 }
