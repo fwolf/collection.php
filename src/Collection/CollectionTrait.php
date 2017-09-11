@@ -2,6 +2,7 @@
 
 namespace Fwolf\Common\Collection;
 
+use Fwolf\Common\Collection\Component\ArrayAccessTrait;
 use Fwolf\Common\Collection\Component\CountableTrait;
 
 /**
@@ -10,5 +11,6 @@ use Fwolf\Common\Collection\Component\CountableTrait;
  */
 trait CollectionTrait
 {
+    use ArrayAccessTrait;
     use CountableTrait;
 }
