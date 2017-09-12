@@ -2,8 +2,6 @@
 
 namespace Fwolf\Common\Collection;
 
-use Traversable;
-
 /**
  * @copyright   Copyright 2017 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT

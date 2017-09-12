@@ -4,6 +4,7 @@ namespace Fwolf\Common\Collection;
 
 use ArrayAccess;
 use Countable;
+use Iterator;
 use IteratorAggregate;
 
 /**
@@ -15,6 +16,7 @@ use IteratorAggregate;
 interface CollectionInterface extends
     ArrayAccess,
     Countable,
+    Iterator,
     IteratorAggregate
 {
 }
