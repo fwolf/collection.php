@@ -4,6 +4,7 @@ namespace Fwolf\Common\Collection;
 
 use ArrayAccess;
 use Countable;
+use Fwolf\Common\Collection\Component\ArrayAbleInterface;
 use Iterator;
 use IteratorAggregate;
 
@@ -25,6 +26,7 @@ use IteratorAggregate;
  * @license     https://opensource.org/licenses/MIT MIT
  */
 interface CollectionInterface extends
+    ArrayAbleInterface,
     ArrayAccess,
     Countable,
     Iterator,
