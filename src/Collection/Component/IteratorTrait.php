@@ -71,6 +71,6 @@ trait IteratorTrait
      */
     public function valid()
     {
-        return !(false === $this->current());
+        return false !== $this->current();
     }
 }
