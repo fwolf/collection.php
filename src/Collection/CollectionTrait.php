@@ -5,7 +5,6 @@ namespace Fwolf\Common\Collection;
 use Fwolf\Common\Collection\Component\ArrayAbleTrait;
 use Fwolf\Common\Collection\Component\ArrayAccessTrait;
 use Fwolf\Common\Collection\Component\CountableTrait;
-use Fwolf\Common\Collection\Component\IteratorAggregateTrait;
 use Fwolf\Common\Collection\Component\IteratorTrait;
 
 /**
@@ -18,5 +17,4 @@ trait CollectionTrait
     use ArrayAccessTrait;
     use CountableTrait;
     use IteratorTrait;
-    use IteratorAggregateTrait;
 }

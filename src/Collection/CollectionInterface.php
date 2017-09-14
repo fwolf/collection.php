@@ -6,7 +6,6 @@ use ArrayAccess;
 use Countable;
 use Fwolf\Common\Collection\Component\ArrayAbleInterface;
 use Iterator;
-use IteratorAggregate;
 
 /**
  * Collection is better way to operate array alike data
@@ -29,7 +28,6 @@ interface CollectionInterface extends
     ArrayAbleInterface,
     ArrayAccess,
     Countable,
-    Iterator,
-    IteratorAggregate
+    Iterator
 {
 }
