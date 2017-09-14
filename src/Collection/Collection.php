@@ -17,4 +17,15 @@ class Collection implements CollectionInterface
      * @var array
      */
     protected $elements = [];
+
+
+    /**
+     * Constructor
+     *
+     * @param   array $elements
+     */
+    public function __construct(array $elements = [])
+    {
+        $this->elements = $elements;
+    }
 }
