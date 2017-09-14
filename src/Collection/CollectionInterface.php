@@ -5,6 +5,7 @@ namespace Fwolf\Common\Collection;
 use ArrayAccess;
 use Countable;
 use Fwolf\Common\Collection\Component\ArrayAbleInterface;
+use Fwolf\Common\Collection\Component\ArrayAccessorInterface;
 use Iterator;
 
 /**
@@ -27,6 +28,7 @@ use Iterator;
 interface CollectionInterface extends
     ArrayAbleInterface,
     ArrayAccess,
+    ArrayAccessorInterface,
     Countable,
     Iterator
 {
