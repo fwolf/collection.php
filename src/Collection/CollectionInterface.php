@@ -7,6 +7,7 @@ use Countable;
 use Fwolf\Common\Collection\Component\ArrayAbleInterface;
 use Fwolf\Common\Collection\Component\ArrayAccessorInterface;
 use Fwolf\Common\Collection\Component\ArraySearchInterface;
+use Fwolf\Common\Collection\Component\ArraySetComputeInterface;
 use Iterator;
 
 /**
@@ -31,6 +32,7 @@ interface CollectionInterface extends
     ArrayAccess,
     ArrayAccessorInterface,
     ArraySearchInterface,
+    ArraySetComputeInterface,
     Countable,
     Iterator
 {
