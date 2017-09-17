@@ -7,6 +7,7 @@ use Fwolf\Common\Collection\Component\ArrayAccessorTrait;
 use Fwolf\Common\Collection\Component\ArrayAccessTrait;
 use Fwolf\Common\Collection\Component\ArraySearchTrait;
 use Fwolf\Common\Collection\Component\ArraySetComputeTrait;
+use Fwolf\Common\Collection\Component\ArraySortTrait;
 use Fwolf\Common\Collection\Component\CountableTrait;
 use Fwolf\Common\Collection\Component\IteratorTrait;
 
@@ -21,6 +22,7 @@ trait CollectionTrait
     use ArrayAccessorTrait;
     use ArraySearchTrait;
     use ArraySetComputeTrait;
+    use ArraySortTrait;
     use CountableTrait;
     use IteratorTrait;
 }
