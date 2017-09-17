@@ -1,0 +1,56 @@
+<?php
+
+namespace Fwolf\Common\Collection;
+
+use ArrayAccess;
+use Countable;
+use Fwolf\Common\Collection\Component\ArrayAbleInterface;
+use Fwolf\Common\Collection\Component\ArrayAccessorInterface;
+use Fwolf\Common\Collection\Component\ArraySearchInterface;
+use Fwolf\Common\Collection\Component\ArraySetComputeInterface;
+use Fwolf\Common\Collection\Component\ArraySortInterface;
+use Fwolf\Common\Collection\Component\ArrayTravelInterface;
+use Fwolf\Common\Collection\Component\JsonAbleInterface;
+use Iterator;
+
+/**
+ * Collection only allow single object type element
+ *
+ *
+ * - Can only store objects, do not accept scalar or resource, callable type.
+ *
+ *      - When accept new element, will do type check
+ *      - When return collection type, will try to return self, then a new
+ *      typed collection instance
+ *
+ * - Type check and convert may costs, be careful when used on mass data.
+ *
+ *
+ * - Key is also identity of an object, should be unique. It is bind to object
+ * instance, and do not change when object property change.
+ *
+ * - Key need not explicit assign. Child class may implement method to get
+ * key/identity from object instance.
+ *
+ * - Inner elements will always be assoc array, and same when exported.
+ *
+ *
+ * - For method use array parameter, use a typed collection instance also fit.
+ *
+ *
+ * @copyright   Copyright 2017 Fwolf
+ * @license     https://opensource.org/licenses/MIT MIT
+ */
+interface TypedCollectionInterface extends
+    ArrayAbleInterface,
+    ArrayAccess,
+    ArrayAccessorInterface,
+    ArraySearchInterface,
+    ArraySetComputeInterface,
+    ArraySortInterface,
+    ArrayTravelInterface,
+    Countable,
+    Iterator,
+    JsonAbleInterface
+{
+}
