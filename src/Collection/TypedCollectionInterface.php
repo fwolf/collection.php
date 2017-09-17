@@ -38,6 +38,12 @@ use Iterator;
  * - For method use array parameter, use a typed collection instance also fit.
  *
  *
+ * - After PHP 7.0, there are more type hint feature. Single element parameter
+ * can use type hint to do type check, but still lack of type check on object
+ * array parameter like SomeClass[]. In this case, a typed collection can be
+ * declared as type of object array parameter.
+ *
+ *
  * @copyright   Copyright 2017 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
