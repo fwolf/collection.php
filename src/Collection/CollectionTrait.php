@@ -11,6 +11,7 @@ use Fwolf\Common\Collection\Component\ArraySortTrait;
 use Fwolf\Common\Collection\Component\ArrayTravelTrait;
 use Fwolf\Common\Collection\Component\CountableTrait;
 use Fwolf\Common\Collection\Component\IteratorTrait;
+use Fwolf\Common\Collection\Component\JsonAbleTrait;
 
 /**
  * @copyright   Copyright 2017 Fwolf
@@ -27,4 +28,5 @@ trait CollectionTrait
     use ArrayTravelTrait;
     use CountableTrait;
     use IteratorTrait;
+    use JsonAbleTrait;
 }

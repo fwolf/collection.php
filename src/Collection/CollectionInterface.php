@@ -10,6 +10,7 @@ use Fwolf\Common\Collection\Component\ArraySearchInterface;
 use Fwolf\Common\Collection\Component\ArraySetComputeInterface;
 use Fwolf\Common\Collection\Component\ArraySortInterface;
 use Fwolf\Common\Collection\Component\ArrayTravelInterface;
+use Fwolf\Common\Collection\Component\JsonAbleInterface;
 use Iterator;
 
 /**
@@ -38,6 +39,7 @@ interface CollectionInterface extends
     ArraySortInterface,
     ArrayTravelInterface,
     Countable,
-    Iterator
+    Iterator,
+    JsonAbleInterface
 {
 }
