@@ -11,6 +11,7 @@ use Fwolf\Common\Collection\Component\ArraySetComputeInterface;
 use Fwolf\Common\Collection\Component\ArraySortInterface;
 use Fwolf\Common\Collection\Component\ArrayTravelInterface;
 use Fwolf\Common\Collection\Component\JsonAbleInterface;
+use Fwolf\Common\Collection\Component\TypedSpecificInterface;
 use Iterator;
 
 /**
@@ -57,6 +58,7 @@ interface TypedCollectionInterface extends
     ArrayTravelInterface,
     Countable,
     Iterator,
-    JsonAbleInterface
+    JsonAbleInterface,
+    TypedSpecificInterface
 {
 }

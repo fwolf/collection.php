@@ -3,6 +3,13 @@
 namespace Fwolf\Common\Collection;
 
 /**
+ * Implement for {@link TypedCollectionInterface}
+ *
+ * Usage: Inherit as a child class, and assign instance class name to
+ * {@link $allowedType}. Method {@link compareElement()} and
+ * {@link getElementIdentity()} may need overwritten by nature logic of
+ * allowed type.
+ *
  * @copyright   Copyright 2017 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
@@ -10,6 +17,13 @@ class TypedCollection implements TypedCollectionInterface
 {
     use TypedCollectionTrait;
 
+
+    /**
+     * Allowed elements type/className of this collection
+     *
+     * @var string
+     */
+    protected $allowedType = '';
 
     /**
      * Real elements in collection
@@ -26,6 +40,8 @@ class TypedCollection implements TypedCollectionInterface
      */
     public function __construct(array $elements = [])
     {
+        $this->assertAllowedTypes($elements);
+
         $this->elements = $elements;
     }
 }
