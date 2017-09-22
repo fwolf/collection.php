@@ -23,6 +23,16 @@ interface TypedSpecificInterface
 
 
     /**
+     * Check elements are all instance of allowed type or throw exception
+     *
+     * @param   object[] $elements
+     * @return  $this
+     * @throws  NotAllowedTypeException
+     */
+    public function assertAllowedTypes(array $elements);
+
+
+    /**
      * Compare two element
      *
      * Child class should overwrite this method to compare elements consider

@@ -42,6 +42,22 @@ class TypedSpecificTraitTest extends PHPUnitTestCase
     }
 
 
+    public function testAssertAllowedTypesFail()
+    {
+        $this->expectException(NotAllowedTypeException::class);
+
+        $trait = $this->buildMock();
+        $trait->assertAllowedTypes([new \stdClass(), new \DateTime()]);
+    }
+
+
+    public function testAssertAllowedTypesSuccess()
+    {
+        $trait = $this->buildMock();
+        $trait->assertAllowedTypes([new \stdClass(), new \stdClass()]);
+    }
+
+
     public function testCompareElement()
     {
         $trait = $this->buildMock();
