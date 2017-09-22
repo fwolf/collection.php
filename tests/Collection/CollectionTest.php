@@ -20,7 +20,7 @@ class CollectionTest extends PHPUnitTestCase
     {
         $mock = $this->getMockBuilder(Collection::class)
             ->setMethods($methods)
-            ->getMockForTrait();
+            ->getMock();
 
         return $mock;
     }
