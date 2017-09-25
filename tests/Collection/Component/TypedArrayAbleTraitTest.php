@@ -46,7 +46,8 @@ class TypedArrayAbleTraitTest extends PHPUnitTestCase
 
 
         $trait2 = $this->buildMock(['assertAllowedTypes']);
-        $trait2->method('assertAllowedTypes')
+        $trait2->expects($this->exactly(1))
+            ->method('assertAllowedTypes')
             ->willReturnSelf();
 
         $trait2->fromArray($exportAr);
