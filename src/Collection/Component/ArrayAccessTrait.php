@@ -18,7 +18,7 @@ trait ArrayAccessTrait
      * Whether a offset exists
      *
      * @link    http://php.net/manual/en/arrayaccess.offsetexists.php
-     * @param   mixed $offset
+     * @param   string|int $offset
      * @return  bool    True on success or false on failure.
      */
     public function offsetExists($offset)
@@ -31,7 +31,7 @@ trait ArrayAccessTrait
      * Offset to retrieve
      *
      * @link    http://php.net/manual/en/arrayaccess.offsetget.php
-     * @param   mixed $offset
+     * @param   string|int $offset
      * @return  mixed
      */
     public function offsetGet($offset)
@@ -44,8 +44,8 @@ trait ArrayAccessTrait
      * Offset to set
      *
      * @link    http://php.net/manual/en/arrayaccess.offsetset.php
-     * @param   mixed $offset
-     * @param   mixed $value
+     * @param   string|int $offset
+     * @param   mixed      $value
      * @return  void
      */
     public function offsetSet($offset, $value)
@@ -58,7 +58,7 @@ trait ArrayAccessTrait
      * Offset to unset
      *
      * @link    http://php.net/manual/en/arrayaccess.offsetunset.php
-     * @param   mixed $offset
+     * @param   string|int $offset
      * @return  void
      */
     public function offsetUnset($offset)
