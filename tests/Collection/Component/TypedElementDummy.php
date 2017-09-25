@@ -8,7 +8,7 @@ use stdClass;
  * @copyright   Copyright 2017 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
-class TypedCollectionTestDummy extends stdClass
+class TypedElementDummy extends stdClass
 {
     /**
      * @var string|int

@@ -37,9 +37,9 @@ class TypedArrayAbleTraitTest extends PHPUnitTestCase
         $trait = $this->buildMock();
 
         $trait->elements = [
-            new TypedCollectionTestDummy(1),
-            new TypedCollectionTestDummy(3),
-            new TypedCollectionTestDummy(2),
+            new TypedElementDummy(1),
+            new TypedElementDummy(3),
+            new TypedElementDummy(2),
         ];
 
         $exportAr = $trait->toArray();
@@ -50,7 +50,7 @@ class TypedArrayAbleTraitTest extends PHPUnitTestCase
             ->willReturnSelf();
 
         $trait2->fromArray($exportAr);
-        /** @var TypedCollectionTestDummy[] $elements */
+        /** @var TypedElementDummy[] $elements */
         $elements = $trait2->elements;
         $this->assertEquals(1, $elements[0]->getIdentity());
         $this->assertEquals(3, $elements[1]->getIdentity());
