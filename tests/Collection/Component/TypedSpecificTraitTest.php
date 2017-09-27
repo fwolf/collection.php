@@ -93,5 +93,8 @@ class TypedSpecificTraitTest extends PHPUnitTestCase
 
         $this->assertTrue($trait->isAllowedType(new \stdClass()));
         $this->assertFalse($trait->isAllowedType(new \DateTime()));
+
+        $trait->setAllowedType(\DateTime::class);
+        $this->assertTrue($trait->isAllowedType(new \DateTime()));
     }
 }

@@ -27,6 +27,10 @@ use Iterator;
  * - Type check and convert may costs, be careful when used on mass data.
  *
  *
+ * - Allowed type can assign through setter, this is for use typed collection
+ * without inherit to a new class, NOT for mixed types.
+ *
+ *
  * - Key is also identity of an object, should be unique. It is bind to object
  * instance, and do not change when object property change.
  *

@@ -152,4 +152,18 @@ trait TypedSpecificTrait
     {
         return $this->getAllowedType() == get_class($element);
     }
+
+
+    /**
+     * Setter of allowed type/className
+     *
+     * @param   string $className
+     * @return  $this
+     */
+    public function setAllowedType($className)
+    {
+        $this->allowedType = $className;
+
+        return $this;
+    }
 }

@@ -84,4 +84,13 @@ interface TypedSpecificInterface
      * @return  bool
      */
     public function isAllowedType($element);
+
+
+    /**
+     * Setter of allowed type/className
+     *
+     * @param   string $className
+     * @return  $this
+     */
+    public function setAllowedType($className);
 }
