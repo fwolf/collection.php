@@ -14,4 +14,17 @@ class TypedCollectionTestDummy extends TypedCollection
      * {@inheritDoc}
      */
     protected $allowedType = 'stdClass';
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getElementIdentity($element)
+    {
+        if (method_exists($element, 'getIdentity')) {
+            return $element->getIdentity();
+        } else {
+            return parent::getElementIdentity($element);
+        }
+    }
 }

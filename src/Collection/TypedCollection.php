@@ -42,6 +42,10 @@ class TypedCollection implements TypedCollectionInterface
     {
         $this->assertAllowedTypes($elements);
 
-        $this->elements = $elements;
+        // In case elements do not have proper key
+        foreach ($elements as $element) {
+            $identity = $this->getElementIdentity($element);
+            $this->elements[$identity] = $element;
+        }
     }
 }
