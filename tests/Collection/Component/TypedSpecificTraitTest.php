@@ -92,6 +92,7 @@ class TypedSpecificTraitTest extends PHPUnitTestCase
         $trait = $this->buildMock();
 
         $this->assertTrue($trait->isAllowedType(new \stdClass()));
+        $this->assertTrue($trait->isAllowedType(new TypedElementDummy()));
         $this->assertFalse($trait->isAllowedType(new \DateTime()));
 
         $trait->setAllowedType(\DateTime::class);

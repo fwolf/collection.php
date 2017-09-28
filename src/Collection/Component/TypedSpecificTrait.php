@@ -150,7 +150,9 @@ trait TypedSpecificTrait
      */
     public function isAllowedType($element)
     {
-        return $this->getAllowedType() == get_class($element);
+        $allowedType = $this->getAllowedType();
+
+        return ($element instanceof $allowedType);
     }
 
 
