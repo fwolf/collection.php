@@ -4,13 +4,13 @@ namespace Fwolf\Common\Collection;
 
 use ArrayAccess;
 use Countable;
-use Fwolf\Common\Collection\Component\ArrayAccessorInterface;
 use Fwolf\Common\Collection\Component\ArraySearchInterface;
 use Fwolf\Common\Collection\Component\ArraySetComputeInterface;
 use Fwolf\Common\Collection\Component\ArraySortInterface;
 use Fwolf\Common\Collection\Component\ArrayTravelInterface;
 use Fwolf\Common\Collection\Component\JsonAbleInterface;
 use Fwolf\Common\Collection\Component\TypedArrayAbleInterface;
+use Fwolf\Common\Collection\Component\TypedArrayAccessorInterface;
 use Fwolf\Common\Collection\Component\TypedSpecificInterface;
 use Iterator;
 
@@ -54,7 +54,6 @@ use Iterator;
  */
 interface TypedCollectionInterface extends
     ArrayAccess,
-    ArrayAccessorInterface,
     ArraySearchInterface,
     ArraySetComputeInterface,
     ArraySortInterface,
@@ -63,6 +62,7 @@ interface TypedCollectionInterface extends
     Iterator,
     JsonAbleInterface,
     TypedArrayAbleInterface,
+    TypedArrayAccessorInterface,
     TypedSpecificInterface
 {
 }
