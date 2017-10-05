@@ -49,6 +49,11 @@ use Iterator;
  * declared as type of object array parameter.
  *
  *
+ * - :TODO: An example child class, with type hint of methods which return
+ * element object, through phpdoc @method tag, to help IDE find more precise
+ * variable type.
+ *
+ *
  * @copyright   Copyright 2017 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
