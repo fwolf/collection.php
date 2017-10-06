@@ -4,6 +4,7 @@ namespace FwolfTest\Common\Collection\Component;
 
 use Fwolf\Common\Collection\Component\TypedSpecificTrait;
 use Fwolf\Common\Collection\Exception\NotAllowedTypeException;
+use FwolfTest\Common\Collection\TypedCollectionTestDummy;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit_Framework_TestCase as PHPUnitTestCase;
 
@@ -73,6 +74,17 @@ class TypedSpecificTraitTest extends PHPUnitTestCase
         );
         $this->assertEquals(-1, $trait->compareElement($object1, $object2));
         $this->assertEquals(1, $trait->compareElement($object2, $object1));
+    }
+
+
+    public function testCreateCollection()
+    {
+        $element1 = new TypedElementDummy(1);
+        $element2 = new TypedElementDummy(2);
+        $collection = (new TypedCollectionTestDummy())
+            ->createCollection([$element1, $element2]);
+
+        $this->assertEquals([1, 2], $collection->getKeys());
     }
 
 

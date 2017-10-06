@@ -3,6 +3,7 @@
 namespace Fwolf\Common\Collection\Component;
 
 use Fwolf\Common\Collection\Exception\NotAllowedTypeException;
+use Fwolf\Common\Collection\TypedCollectionInterface;
 
 /**
  * Shared method of typed collection, additional to normal collection
@@ -53,6 +54,15 @@ interface TypedSpecificInterface
      * @return  int
      */
     public function compareElement($element1, $element2);
+
+
+    /**
+     * Create a new collection with same allowed type
+     *
+     * @param   object[] $elements
+     * @return  TypedCollectionInterface
+     */
+    public function createCollection($elements = []);
 
 
     /**

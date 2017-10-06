@@ -3,6 +3,7 @@
 namespace Fwolf\Common\Collection\Component;
 
 use Fwolf\Common\Collection\Exception\NotAllowedTypeException;
+use Fwolf\Common\Collection\TypedCollectionInterface;
 
 /**
  * Implement of {@link TypedSpecificInterface}
@@ -92,6 +93,27 @@ trait TypedSpecificTrait
         } else {
             return 1;
         }
+    }
+
+
+    /**
+     * Create a new collection with same allowed type
+     *
+     * @param   object[] $elements
+     * @return  TypedCollectionInterface
+     */
+    public function createCollection($elements = [])
+    {
+        $className = get_called_class();
+        /** @var TypedCollectionInterface $instance */
+        $instance = new $className();
+        $instance->setAllowedType($this->getAllowedType());
+
+        if (!empty($elements)) {
+            $instance->appendMultiple($elements);
+        }
+
+        return $instance;
     }
 
 
