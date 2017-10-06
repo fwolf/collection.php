@@ -50,7 +50,7 @@ use Iterator;
  *
  *
  * - :TODO: An example child class, with type hint of methods which return
- * element object, through phpdoc @method tag, to help IDE find more precise
+ * element object, through phpdoc {@method} tag, to help IDE find more precise
  * variable type.
  *
  *
