@@ -102,7 +102,7 @@ trait TypedSpecificTrait
      * @param   object[] $elements
      * @return  TypedCollectionInterface
      */
-    public function createCollection($elements = [])
+    public function createCollection(array $elements = [])
     {
         $className = get_called_class();
         /** @var TypedCollectionInterface $instance */
