@@ -13,6 +13,7 @@ use Fwolf\Common\Collection\TypedCollectionInterface;
  * @method      $this assertAllowedType($element)
  * @method      $this assertAllowedTypes(array $elements)
  * @method      int compareElement($element1, $element2)
+ * @method      TypedCollectionInterface createCollection($elements = [])
  * @method      string|int getElementIdentity($element)
  *
  * @copyright   Copyright 2017 Fwolf
