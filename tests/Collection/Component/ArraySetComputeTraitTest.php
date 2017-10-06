@@ -67,8 +67,8 @@ class ArraySetComputeTraitTest extends PHPUnitTestCase
 
         // Seems {@link array_intersect_uKey()} do internal key compare on
         // source and compare to array first, and result array NEVER exceed
-        // count of compare to array, so few compare to array elements may cause
-        // incorrect test result.
+        // count of compare to array, so few compare to array elements may
+        // cause incorrect test result.
         $compareFunc = function ($key1, $key2) {
             return (substr($key1, 0, 3) == substr($key2, 0, 3)) ? 0 : -1;
         };
