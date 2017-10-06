@@ -2,7 +2,6 @@
 
 namespace Fwolf\Common\Collection;
 
-use Fwolf\Common\Collection\Component\ArraySearchTrait;
 use Fwolf\Common\Collection\Component\ArraySetComputeTrait;
 use Fwolf\Common\Collection\Component\ArraySortTrait;
 use Fwolf\Common\Collection\Component\ArrayTravelTrait;
@@ -12,6 +11,7 @@ use Fwolf\Common\Collection\Component\JsonAbleTrait;
 use Fwolf\Common\Collection\Component\TypedArrayAbleTrait;
 use Fwolf\Common\Collection\Component\TypedArrayAccessorTrait;
 use Fwolf\Common\Collection\Component\TypedArrayAccessTrait;
+use Fwolf\Common\Collection\Component\TypedArraySearchTrait;
 use Fwolf\Common\Collection\Component\TypedSpecificTrait;
 
 /**
@@ -20,7 +20,6 @@ use Fwolf\Common\Collection\Component\TypedSpecificTrait;
  */
 trait TypedCollectionTrait
 {
-    use ArraySearchTrait;
     use ArraySetComputeTrait;
     use ArraySortTrait;
     use ArrayTravelTrait;
@@ -30,5 +29,6 @@ trait TypedCollectionTrait
     use TypedArrayAbleTrait;
     use TypedArrayAccessTrait;
     use TypedArrayAccessorTrait;
+    use TypedArraySearchTrait;
     use TypedSpecificTrait;
 }
