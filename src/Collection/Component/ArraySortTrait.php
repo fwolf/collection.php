@@ -19,7 +19,7 @@ trait ArraySortTrait
      */
     public function reverse()
     {
-        $this->elements = array_reverse($this->elements);
+        $this->elements = array_reverse($this->elements, true);
 
         return $this;
     }

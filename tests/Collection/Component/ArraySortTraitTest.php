@@ -32,20 +32,23 @@ class ArraySortTraitTest extends PHPUnitTestCase
     public function testReverseShuffleUnique()
     {
         $trait = $this->buildMock();
-        $trait->elements = ['foo', 'foo', 'bar'];
 
+        $trait->elements = ['foo', 'foo', 'bar'];
         $this->assertEquals(
-            var_export(['bar', 'foo', 'foo'], true),
+            var_export([2 => 'bar', 1 => 'foo', 0 => 'foo'], true),
             var_export($trait->reverse()->elements, true)
         );
 
+
+        $trait->elements = ['foo', 'foo', 'bar'];
         $this->assertEquals(
-            var_export(['bar', 'foo'], true),
+            var_export(['foo', 2 => 'bar'], true),
             var_export($trait->unique()->elements, true)
         );
 
+        $trait->elements = ['foo', 'foo', 'bar'];
         $trait->shuffle();
-        $this->assertEquals(2, count($trait->elements));
+        $this->assertEquals(3, count($trait->elements));
     }
 
 
