@@ -18,8 +18,16 @@
         "php": ">=5.6"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7",
+        "symfony/yaml": "~3.4",
+        "doctrine/instantiator": "~1.0.5",
+        "phpdocumentor/reflection-docblock": "~4.3"
     },
+    "note": [
+        "symfony/yaml 4.0 require PHP 7.1.0 for public const",
+        "doctrine/instantiator 1.1.x require PHP 7.0 for method return type",
+        "phpdocumentor/reflection-docblock 5 require PHP 7.0 for declare strict"
+    ],
     "autoload": {
         "psr-4": {
             "Fwolf\\Common\\Collection\\": "src/Collection/"
