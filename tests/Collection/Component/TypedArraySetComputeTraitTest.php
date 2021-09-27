@@ -8,7 +8,7 @@ use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit_Framework_TestCase as PHPUnitTestCase;
 
 /**
- * @copyright   Copyright 2017 Fwolf
+ * @copyright   Copyright 2017, 2021 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
 class TypedArraySetComputeTraitTest extends PHPUnitTestCase
@@ -111,14 +111,19 @@ class TypedArraySetComputeTraitTest extends PHPUnitTestCase
         // count of compare to array, so few compare to array elements may
         // cause incorrect test result.
         $compareFunc = function ($key1, $key2) {
-            return (substr($key1, 0, 3) == substr($key2, 0, 3)) ? 0 : -1;
+            // {@link array_intersect_uKey()} will sort source array with user
+            // defined func first, when compare with against the sort info
+            // will be used to optimize.
+            return strncmp($key1, $key2, 4);
         };
-        $collection = new TypedCollectionTestDummy([$element2, $element5]);
+        $collection = new TypedCollectionTestDummy(
+            [$element2, $element3, $element5]
+        );
         $result = $trait->intersectByKeyCompare(
             $compareFunc,
             $collection->toArray()
         );
-        $this->assertEquals(['foo1', 'foo2'], $result->getKeys());
+        $this->assertEquals(['foo2', 'bar1'], $result->getKeys());
 
 
         $collection = new TypedCollectionTestDummy([$element1, $element3]);
@@ -126,19 +131,23 @@ class TypedArraySetComputeTraitTest extends PHPUnitTestCase
         $this->assertEquals(['foo1', 'bar1'], $result->getKeys());
 
         $compareFunc = function (
-            TypedElementDummy $val1,
-            TypedElementDummy $val2
+            TypedElementDummy $elm1,
+            TypedElementDummy $elm2
         ) {
-            $key1 = $val1->getIdentity();
-            $key2 = $val2->getIdentity();
+            $val1 = $elm1->getIdentity();
+            $val2 = $elm2->getIdentity();
 
-            return (substr($key1, 0, 3) == substr($key2, 0, 3)) ? 0 : -1;
+            return strncmp($val1, $val2, 4);
         };
-        $collection = new TypedCollectionTestDummy([$element3, $element5]);
+        $collection = new TypedCollectionTestDummy(
+            [$element5, $element4, $element3]
+        );
         $result = $trait->intersectByValueCompare(
             $compareFunc,
             $collection->toArray()
         );
+        // As sort reason above, result array order maybe a little chaos, do
+        // not rely on it.
         $this->assertEquals(['bar1', 'bar2'], $result->getKeys());
     }
 

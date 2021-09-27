@@ -14,7 +14,7 @@ use Fwolf\Common\Collection\TypedCollectionInterface;
  * @method      TypedCollectionInterface createCollection(array $items = [])
  * @method      string|int getElementIdentity($element)
  *
- * @copyright   Copyright 2017 Fwolf
+ * @copyright   Copyright 2017, 2021 Fwolf
  * @license     https://opensource.org/licenses/MIT MIT
  */
 trait TypedArraySetComputeTrait
@@ -127,8 +127,7 @@ trait TypedArraySetComputeTrait
 
 
     /**
-     * Return collection of elements whose keys also in all of given
-     * collection
+     * Return collection of elements whose keys also in all given collection
      *
      * With given compare function.
      *
@@ -171,8 +170,7 @@ trait TypedArraySetComputeTrait
 
 
     /**
-     * Return collection of elements whose value also in all of given
-     * collection
+     * Return collection of elements whose value also in all given collection
      *
      * With given compare function.
      *
